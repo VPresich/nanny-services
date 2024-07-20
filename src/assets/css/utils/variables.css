@@ -1,0 +1,23 @@
+:root {
+  --primary: #11101c;
+  --text: rgba(17, 16, 28, 0.5);
+
+  --white: #fff;
+
+  --default: #8a8a89;
+  --default-accent: #b0adad;
+
+  --green: #103931;
+  --green-accent: rgba(16, 57, 49, 0.2);
+
+  --blue: #0957c3;
+  --blue-accent: rgba(9, 87, 195, 0.2);
+
+  --red: #f03f3b;
+  --red-accent: rgba(240, 63, 59, 0.2);
+
+  --section-bgr: #666;
+  --card-bgr: #fbfbfb;
+
+  --max-width: 1440px;
+}
