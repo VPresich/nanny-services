@@ -7,7 +7,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--default);
   border: none;
   cursor: pointer;
   position: relative;
@@ -27,6 +26,14 @@
 
 .btn.red {
   background-color: var(--red);
+}
+
+.btn.yellow {
+  background-color: var(--yellow);
+}
+
+.btn.pink {
+  background-color: var(--pink);
 }
 
 .btn.open .icon {
@@ -51,7 +58,6 @@
   height: 28px;
   border-radius: 50px;
   cursor: pointer;
-  background-color: var(--default);
 }
 
 .label.green {
@@ -64,6 +70,14 @@
 
 .label.red {
   background-color: var(--red);
+}
+
+.label.yellow {
+  background-color: var(--yellow);
+}
+
+.label.pink {
+  background-color: var(--pink);
 }
 
 .label input {

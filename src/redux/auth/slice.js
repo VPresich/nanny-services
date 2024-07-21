@@ -9,7 +9,7 @@ import {
 } from "./operations";
 
 const initialState = {
-  user: { name: null, email: null, theme: "default", avatarURL: "" },
+  user: { name: null, email: null, theme: "red", avatarURL: "" },
   token: null,
   isLoggedIn: false,
   isRefreshing: true,
@@ -64,7 +64,7 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(logOut.fulfilled, (state) => {
-        state.user = { name: null, email: null, theme: "default" };
+        state.user = { name: null, email: null, theme: "red" };
         state.token = null;
         state.isLoggedIn = false;
         state.error = null;

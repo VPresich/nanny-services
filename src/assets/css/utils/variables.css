@@ -1,5 +1,7 @@
 :root {
   --primary: #11101c;
+  --secondary: #fbfbfb;
+
   --text: rgba(17, 16, 28, 0.5);
 
   --white: #fff;
@@ -8,16 +10,21 @@
   --default-accent: #b0adad;
 
   --green: #103931;
-  --green-accent: rgba(16, 57, 49, 0.2);
+  --green-accent: rgba(16, 57, 49, 0.5);
 
   --blue: #0957c3;
-  --blue-accent: rgba(9, 87, 195, 0.2);
+  --blue-accent: rgba(9, 87, 195, 0.5);
 
   --red: #f03f3b;
-  --red-accent: rgba(240, 63, 59, 0.2);
+  --red-accent: rgba(240, 63, 59, 0.5);
+
+  --pink: #e0a39a;
+  --pink-accent: rgb(224, 163, 154, 0.5);
+
+  --yellow: #f4c550;
+  --yellow-accent: rgb(244, 197, 80, 0.5);
 
   --section-bgr: #666;
-  --card-bgr: #fbfbfb;
 
   --max-width: 1440px;
 }

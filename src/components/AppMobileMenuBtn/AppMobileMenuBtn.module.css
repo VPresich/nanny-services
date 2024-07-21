@@ -10,10 +10,10 @@
   .mobileMenu {
     display: block;
     position: fixed;
-    top: 0;
-    right: -300px;
+    top: 16px;
+    right: -340px;
     width: 300px;
-    height: 100vh;
+    height: calc(100vh - 16px);
     background-color: #fff;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
     padding-left: 20px;
@@ -21,6 +21,11 @@
     padding-top: 96px;
     transition: right 0.3s ease;
     z-index: 102;
+    background-image: url(../../assets/img/homepage/home-bgr@1x.webp);
+    background-position: right;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    border-radius: 30px;
   }
 
   .mobileMenu.open {
@@ -39,32 +44,8 @@
     width: 24px;
     height: 24px;
     fill: transparent;
-    stroke: var(--primary);
+    stroke: var(--secondary);
     transition: stroke 0.3s ease-in-out;
-  }
-
-  .menuIcon.green {
-    stroke: var(--green);
-  }
-
-  .menuIcon.blue {
-    stroke: var(--blue);
-  }
-
-  .menuIcon.red {
-    stroke: var(--red);
-  }
-
-  .menuIcon.green:hover {
-    stroke: var(--green-accent);
-  }
-
-  .menuIcon.blue:hover {
-    stroke: var(--blue-accent);
-  }
-
-  .menuIcon.red:hover {
-    stroke: var(--red-accent);
   }
 
   .menuIcon:hover {
@@ -91,12 +72,12 @@
     height: 24px;
     fill: transparent;
     stroke-width: 2.5px;
-    stroke: var(--primary);
+    stroke: var(--secondary);
   }
 }
 
 @media screen and (max-width: 375px) {
   .mobileMenu {
-    width: 100%;
+    width: 95%;
   }
 }
