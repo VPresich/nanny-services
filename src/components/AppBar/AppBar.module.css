@@ -1,23 +1,23 @@
 .header {
   width: 100%;
   position: absolute;
-  top: 0;
+  top: 32px;
   left: 0;
   background-color: transparent;
-  padding-left: 128px;
-  padding-right: 128px;
-  padding-top: 52px;
+  padding-left: 66px;
+  padding-right: 64px;
+  padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: first baseline;
   z-index: 10;
   border-bottom: 1px solid rgba(251, 251, 251, 0.4);
 }
 
 .wrapper {
   display: flex;
-  column-gap: 24px;
+  column-gap: 20px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -29,7 +29,7 @@
 
 @media screen and (max-width: 768px) {
   .header {
-    padding-top: 42px;
+    padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 64px;
     padding-right: 64px;

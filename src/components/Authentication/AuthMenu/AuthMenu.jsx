@@ -5,7 +5,7 @@ import {
 } from "../../../redux/auth/selectors";
 import AuthButton from "../AuthButton/AuthButton";
 import RegistrationButton from "../RegistrationButton/RegistrationButton";
-import GoogleButton from "../GoogleBtn/GoogleBtn";
+// import GoogleButton from "../GoogleBtn/GoogleBtn";
 
 import css from "./AuthMenu.module.css";
 
@@ -25,7 +25,7 @@ const AuthMenu = () => {
           <AuthButton>Log In</AuthButton>
           <div className={css.btnsWrapper}>
             <RegistrationButton />
-            <GoogleButton />
+            {/* <GoogleButton /> */}
           </div>
         </>
       )}

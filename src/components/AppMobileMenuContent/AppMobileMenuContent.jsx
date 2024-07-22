@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { selectIsLoggedIn, selectTheme } from "../../redux/auth/selectors";
 import { selectUserName } from "../../redux/auth/selectors";
 import AuthButton from "../../components/Authentication/AuthButton/AuthButton";
-import GoogleButton from "../Authentication/GoogleBtn/GoogleBtn";
+// import GoogleButton from "../Authentication/GoogleBtn/GoogleBtn";
 import RegistrationButton from "../Authentication/RegistrationButton/RegistrationButton";
 import clsx from "clsx";
 import css from "./AppMobileMenuContent.module.css";
@@ -30,7 +30,7 @@ const AppMobileMenuContent = (onMenuClick) => {
           <>
             <AuthButton>Log In</AuthButton>
             <RegistrationButton />
-            <GoogleButton />
+            {/* <GoogleButton /> */}
           </>
         )}
       </div>
