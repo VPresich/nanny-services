@@ -1,7 +1,7 @@
 .btn {
   border-radius: 30px;
-  padding-top: 14px;
-  padding-bottom: 14px;
+  /* padding-top: 14px;
+  padding-bottom: 14px; */
   width: 124px;
   height: 48px;
   display: flex;
@@ -9,43 +9,8 @@
   align-items: center;
   gap: 8px;
   background-color: transparent;
+  border: 1px solid rgba(251, 251, 251, 0.4);
   transition: border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.btn.pink {
-  border: 1px solid var(--pink-accent);
-}
-.btn.red {
-  border: 1px solid var(--red-accent);
-}
-.btn.blue {
-  border: 1px solid var(--blue-accent);
-}
-.btn.green {
-  border: 1px solid var(--green-accent);
-}
-.btn.yellow {
-  border: 1px solid var(--yellow-accent);
-}
-
-.btn.pink:hover {
-  border-color: var(--pink);
-}
-
-.btn.red:hover {
-  border-color: var(--red);
-}
-
-.btn.blue:hover {
-  border-color: var(--blue);
-}
-
-.btn.green:hover {
-  border-color: var(--greent);
-}
-
-.btn.yellow:hover {
-  border-color: var(--yellow);
 }
 
 .txtBtn {
@@ -57,35 +22,6 @@
   color: var(--secondary);
 }
 
-.btn.red:hover .icon,
-.btn.blue:hover .icon,
-.btn.green:hover .icon,
-.btn.pink:hover .icon,
-.btn.blue:hover .icon {
-  stroke: var(--secondary);
-}
-
-.btn .icon {
-  fill: transparent;
-  transition: stroke 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.btn.yellow .icon {
-  stroke: var(--yellow);
-}
-
-.btn.green .icon {
-  stroke: var(--green);
-}
-
-.btn.blue .icon {
-  stroke: var(--blue);
-}
-
-.btn.pink .icon {
-  stroke: var(--pink);
-}
-
-.btn.red .icon {
-  stroke: var(--red);
+.btn:hover {
+  border-color: rgba(251, 251, 251, 0.7);
 }

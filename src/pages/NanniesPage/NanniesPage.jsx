@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import clsx from "clsx";
-import { getNanniesWithParams } from "../../redux/nannies/operations";
+import { getNanniesPerPage } from "../../redux/nannies/operations";
 import { fetchFavorites } from "../../redux/favorites/operations";
 import { selectIsLoggedIn, selectTheme } from "../../redux/auth/selectors";
 // import { selectQueryParams } from "../../redux/filters/selectors";
@@ -20,48 +20,42 @@ import {
 import Button from "../../components/UI/Button/Button";
 import DocumentTitle from "../../components/DocumentTitle";
 
-import nannies from "../../data/cards.json";
-
 import css from "./NanniesPage.module.css";
 
 export default function NanniesPage() {
   const dispatch = useDispatch();
 
-  // const nannies = useSelector(selectNannies);
+  const nannies = useSelector(selectNannies);
 
-  // const currentPage = useSelector(selectCurrentPage);
-  // const itemsPerPage = useSelector(selectItemsPerPage);
-  // const isLoading = useSelector(selectIsLoading);
-  // const isMore = useSelector(selectIsMore);
-  const isMore = false;
-  const isLoading = false;
-  // const error = useSelector(selectError);
-  const error = false;
-  // const nanniesNum = useSelector(selectNanniesNumber);
-  const nanniesNum = 1;
+  const currentPage = useSelector(selectCurrentPage);
+  const itemsPerPage = useSelector(selectItemsPerPage);
+  const isLoading = useSelector(selectIsLoading);
+  const isMore = useSelector(selectIsMore);
+  const error = useSelector(selectError);
+  const nanniesNum = useSelector(selectNanniesNumber);
+
   const theme = useSelector(selectTheme);
 
   //  const queryParams = useSelector(selectQueryParams);
 
-  // useEffect(() => {
-  //   dispatch(
-  //     getNanniesWithParams({
-  //       page: currentPage,
-  //       limit: itemsPerPage,
-  //       //  query: queryParams,
-  //     })
-  //   );
-  //   isLoggedIn && dispatch(fetchFavorites());
-  // }, [dispatch, currentPage, itemsPerPage, isLoggedIn]);
+  useEffect(() => {
+    dispatch(
+      getNanniesPerPage({
+        page: currentPage,
+        limit: itemsPerPage,
+        //  query: queryParams,
+      })
+    );
+    // isLoggedIn && dispatch(fetchFavorites());
+  }, [dispatch, currentPage, itemsPerPage]);
 
-  // const handleLoadMore = () => {
-  //   dispatch(setPage(currentPage + 1));
-  // };
+  const handleLoadMore = () => {
+    dispatch(setPage(currentPage + 1));
+  };
   return (
     <>
       <DocumentTitle>Nannies catalog</DocumentTitle>
       <section className={css.container}>
-        {/* <h2 className="visually-hidden"> Nannies catalog</h2> */}
         <h2 className="visually-hidden"> Nannies catalog</h2>
         <div className={css.headerLine}></div>
         <div className={css.catalog}>
@@ -76,7 +70,7 @@ export default function NanniesPage() {
               )}
               {isMore && (
                 <Button
-                  // onClick={handleLoadMore}
+                  onClick={handleLoadMore}
                   btnAuxStyles={css.btnAuxStyles}
                 >
                   Load More

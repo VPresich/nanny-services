@@ -3,15 +3,11 @@
   padding-left: 128px;
   padding-right: 128px;
   padding-bottom: 88px;
+  padding-top: 88px;
   display: flex;
   flex-direction: column;
   row-gap: 24px;
-}
-
-.headerLine {
-  width: 100%;
-  height: 88px;
-  background-color: var(--red);
+  background-color: #e0e0e0;
 }
 
 .catalog {

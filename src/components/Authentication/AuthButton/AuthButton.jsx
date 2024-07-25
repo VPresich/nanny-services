@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 IconButton;
-import iconsPath from "../../../assets/img/icons.svg";
+
 import { selectIsLoggedIn, selectTheme } from "../../../redux/auth/selectors";
 import ModalWrapper from "../../UI/ModalWrapper/ModalWrapper";
 import LoginForm from "../Forms/LoginForm/LoginForm";
@@ -43,16 +43,6 @@ export default function AuthButton({ children, handleClick }) {
   return (
     <div>
       <button onClick={handleButton} className={clsx(css.btn, css[theme])}>
-        <span className={css.iconContainer}>
-          <svg
-            className={clsx(css.icon, css[theme])}
-            width="20"
-            height="20"
-            aria-label="login-logout icon"
-          >
-            <use href={`${iconsPath}#icon-log-in-out`} />
-          </svg>
-        </span>
         <span className={css.txtBtn}>{children}</span>
       </button>
       {showLoginForm && (
