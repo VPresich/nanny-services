@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-IconButton;
-
+import { errNotify } from "../../../auxiliary/notification/notification";
+import { ERR_LOGIN } from "../Forms/constants";
 import { selectIsLoggedIn, selectTheme } from "../../../redux/auth/selectors";
 import ModalWrapper from "../../UI/ModalWrapper/ModalWrapper";
 import LoginForm from "../Forms/LoginForm/LoginForm";
@@ -9,9 +9,8 @@ import { logOut, logIn } from "../../../redux/auth/operations";
 import css from "./AuthButton.module.css";
 
 import clsx from "clsx";
-import IconButton from "../../UI/IconButton/IconButton";
 
-export default function AuthButton({ children, handleClick }) {
+export default function AuthButton({ children }) {
   const [showLoginForm, setShowLoginForm] = useState(false);
   const dispatch = useDispatch();
 
@@ -24,7 +23,6 @@ export default function AuthButton({ children, handleClick }) {
     } else {
       setShowLoginForm(true);
     }
-    handleClick && handleClick();
   };
 
   const handleLogin = (values) => {
@@ -33,7 +31,9 @@ export default function AuthButton({ children, handleClick }) {
       .then(() => {
         setShowLoginForm(false);
       })
-      .catch(() => {});
+      .catch(() => {
+        errNotify(ERR_LOGIN);
+      });
   };
 
   const handleCloseLogin = () => {
