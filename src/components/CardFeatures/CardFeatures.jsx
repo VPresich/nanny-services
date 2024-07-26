@@ -10,7 +10,7 @@ export default function CardFeatures({ nanny }) {
     <div className={css.container}>
       <div className={css.feature}>
         <svg className={css.iconContainer} aria-label="map pin icon">
-          <use className={css.iconBook} href={`${iconsPath}#con-mappin`} />
+          <use className={css.iconBook} href={`${iconsPath}#icon-mappin`} />
         </svg>
         <span className={css.featureValue}>{location}</span>
 

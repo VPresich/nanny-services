@@ -9,10 +9,9 @@ import ModalWrapper from "../../UI/ModalWrapper/ModalWrapper";
 import RegisterForm from "../Forms/RegisterForm/RegisterForm";
 import css from "./RegistrationButton.module.css";
 
-const RegistrationButton = () => {
+const RegistrationButton = ({ handleClick }) => {
   const [showRegisterForm, setShowRegisterForm] = useState(false);
   const theme = useSelector(selectTheme);
-  // const theme = "red";
   const dispatch = useDispatch();
 
   const handleShowRegister = () => {
@@ -28,6 +27,7 @@ const RegistrationButton = () => {
       .unwrap()
       .then(() => {
         setShowRegisterForm(false);
+        handleClick && handleClick();
       })
       .catch(() => {
         errNotify(ERR_REGISTRATION);

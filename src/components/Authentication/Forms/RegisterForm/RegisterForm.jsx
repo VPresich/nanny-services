@@ -14,14 +14,10 @@ export default function RegisterForm({ handleRegistration }) {
       password: "",
     },
   });
-
   const { handleSubmit } = methods;
-
-  const onSubmit = async (values) => {
-    // console.log("SUBMIT Registration", values);
+  const onSubmit = async (values) => {   
     handleRegistration(values);
   };
-
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} className={css.form}>
@@ -36,7 +32,7 @@ export default function RegisterForm({ handleRegistration }) {
           </div>
           <div className={css.inputsWrapper}>
             <Controller
-              name="address"
+              name="name"
               control={methods.control}
               render={({ field }) => (
                 <Input {...field} placeholder="Name" type="text" />

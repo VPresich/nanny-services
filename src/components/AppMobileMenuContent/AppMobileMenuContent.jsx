@@ -8,7 +8,7 @@ import RegistrationButton from "../Authentication/RegistrationButton/Registratio
 import clsx from "clsx";
 import css from "./AppMobileMenuContent.module.css";
 
-const AppMobileMenuContent = (onMenuClick) => {
+const AppMobileMenuContent = ({ onMenuClick }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const userName = useSelector(selectUserName);
   const theme = useSelector(selectTheme);
@@ -24,12 +24,12 @@ const AppMobileMenuContent = (onMenuClick) => {
             <p
               className={clsx(css.userName, css[theme])}
             >{`Hi, ${userName}`}</p>
-            <AuthButton>Logout</AuthButton>
+            <AuthButton handleClick={onMenuClick}>Logout</AuthButton>
           </>
         ) : (
           <>
-            <AuthButton>Log In</AuthButton>
-            <RegistrationButton />
+            <AuthButton handleClick={onMenuClick}>Log In</AuthButton>
+            <RegistrationButton handleClick={onMenuClick} />
             {/* <GoogleButton /> */}
           </>
         )}

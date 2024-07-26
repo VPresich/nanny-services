@@ -10,7 +10,7 @@ import css from "./AuthButton.module.css";
 
 import clsx from "clsx";
 
-export default function AuthButton({ children }) {
+export default function AuthButton({ children, handleClick }) {
   const [showLoginForm, setShowLoginForm] = useState(false);
   const dispatch = useDispatch();
 
@@ -20,6 +20,7 @@ export default function AuthButton({ children }) {
   const handleButton = () => {
     if (isLoggedIn) {
       dispatch(logOut());
+      handleClick && handleClick();
     } else {
       setShowLoginForm(true);
     }
@@ -30,6 +31,7 @@ export default function AuthButton({ children }) {
       .unwrap()
       .then(() => {
         setShowLoginForm(false);
+        handleClick && handleClick();
       })
       .catch(() => {
         errNotify(ERR_LOGIN);
