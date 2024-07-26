@@ -15,7 +15,7 @@ const nanniesSlice = createSlice({
     currentPage: 1,
     totalItems: 20,
     totalPages: 1,
-    itemsPerPage: 4,
+    itemsPerPage: 3,
   },
   reducers: {
     setPage(state, action) {

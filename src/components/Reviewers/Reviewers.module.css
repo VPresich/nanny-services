@@ -53,24 +53,28 @@
   font-weight: 600;
   font-size: 24px;
   line-height: 1.25;
-  background: var(--gray-bgr);
+  background: var(--section-bgr);
   color: var(--default);
 }
-
 .letter.yellow {
   color: var(--yellow);
+  background: var(--yellow-accent);
 }
 .letter.green {
   color: var(--green);
+  background: var(--green-accent);
 }
 .letter.blue {
   color: var(--blue);
+  background: var(--blue-accent);
 }
 .letter.pink {
   color: var(--pink);
+  background: var(--pink-accent);
 }
 .letter.red {
   color: var(--red);
+  background: var(--red-accent);
 }
 
 .name {

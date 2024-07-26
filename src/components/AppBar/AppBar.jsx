@@ -14,7 +14,6 @@ import css from "./AppBar.module.css";
 export default function AppBar() {
   const theme = useSelector(selectTheme);
   const location = useLocation();
-  console.log(location);
   return (
     <>
       <header

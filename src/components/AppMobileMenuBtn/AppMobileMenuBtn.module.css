@@ -10,7 +10,7 @@
   .mobileMenu {
     display: block;
     position: fixed;
-    top: 16px;
+    top: 0px;
     right: -340px;
     width: 300px;
     height: calc(100vh - 16px);
@@ -26,6 +26,10 @@
     background-repeat: no-repeat;
     overflow: hidden;
     border-radius: 30px;
+  }
+
+  .home {
+    top: 20px;
   }
 
   .mobileMenu.open {

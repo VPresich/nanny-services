@@ -36,7 +36,7 @@ export default function RegisterForm({ handleRegistration }) {
           </div>
           <div className={css.inputsWrapper}>
             <Controller
-              name="name"
+              name="address"
               control={methods.control}
               render={({ field }) => (
                 <Input {...field} placeholder="Name" type="text" />

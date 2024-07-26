@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectTheme } from "../../redux/auth/selectors";
 import iconsPath from "../../assets/img/icons.svg";
@@ -7,6 +8,7 @@ import clsx from "clsx";
 import css from "./AppMobileMenuBtn.module.css";
 
 const AppMobileMenuBtn = () => {
+  const location = useLocation();
   const theme = useSelector(selectTheme);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -26,7 +28,11 @@ const AppMobileMenuBtn = () => {
           <use href={`${iconsPath}#icon-menu`} />
         </svg>
       </button>
-      <div className={clsx(css.mobileMenu, { [css.open]: isOpen })}>
+      <div
+        className={clsx(css.mobileMenu, location.pathname === "/" && css.home, {
+          [css.open]: isOpen,
+        })}
+      >
         <button className={css.closeBtn} onClick={handleClick}>
           <svg
             className={clsx(css.closeIcon, css[theme])}

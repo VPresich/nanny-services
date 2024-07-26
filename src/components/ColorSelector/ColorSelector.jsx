@@ -26,7 +26,7 @@ const ColorSelector = () => {
   };
 
   return (
-    <div className={css.header}>
+    <div className={css.headerContainer}>
       <button
         className={clsx(css.btn, { [css.open]: isOpen }, css[theme])}
         onClick={() => setIsOpen(!isOpen)}
