@@ -15,7 +15,6 @@ export default function HomePage() {
     navigate("/nannies");
   };
   const theme = useSelector(selectTheme);
-  // const theme = "green";
   return (
     <>
       <DocumentTitle>Home Page</DocumentTitle>
@@ -36,7 +35,7 @@ export default function HomePage() {
             <div className={css.statisticItem}>
               <div className={clsx(css.iconContainer, css[theme])}>
                 <svg
-                  className={clsx(css.checkIcon, css[theme])}                
+                  className={clsx(css.checkIcon, css[theme])}
                   aria-label="check box icon"
                 >
                   <use href={`${iconsPath}#icon-check`} />

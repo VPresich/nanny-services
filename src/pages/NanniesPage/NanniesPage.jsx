@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { getNanniesPerPage } from "../../redux/nannies/operations";
 import { fetchFavorites } from "../../redux/favorites/operations";
 import { selectIsLoggedIn, selectTheme } from "../../redux/auth/selectors";
-// import { selectQueryParams } from "../../redux/filters/selectors";
+import { selectQueryParams } from "../../redux/filters/selectors";
 import { setPage } from "../../redux/nannies/slice";
 import CardList from "../../components/CardsList/CardsList";
 // import Filters from "../../components/Filters/Filters";
@@ -26,10 +26,10 @@ export default function NanniesPage() {
   const dispatch = useDispatch();
 
   const nannies = useSelector(selectNannies);
-
   const currentPage = useSelector(selectCurrentPage);
   const itemsPerPage = useSelector(selectItemsPerPage);
   const isLoading = useSelector(selectIsLoading);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const isMore = useSelector(selectIsMore);
   const error = useSelector(selectError);
   const nanniesNum = useSelector(selectNanniesNumber);
@@ -46,8 +46,8 @@ export default function NanniesPage() {
         //  query: queryParams,
       })
     );
-    // isLoggedIn && dispatch(fetchFavorites());
-  }, [dispatch, currentPage, itemsPerPage]);
+    isLoggedIn && dispatch(fetchFavorites());
+  }, [dispatch, currentPage, itemsPerPage, isLoggedIn]);
 
   const handleLoadMore = () => {
     dispatch(setPage(currentPage + 1));

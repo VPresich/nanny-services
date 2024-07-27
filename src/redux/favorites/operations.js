@@ -19,7 +19,7 @@ export const fetchFavorites = createAsyncThunk(
   "favorites/fetchAll",
   async (_, thunkAPI) => {
     try {
-      const response = await axiosInst.get("nannies/favorites");
+      const response = await axiosInst.get(`nannies/favorites`);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
