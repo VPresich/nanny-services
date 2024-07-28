@@ -91,7 +91,7 @@ export default function MakeAppoitmentFormContent({ nanny, handleValues }) {
             </div>
 
             <Controller
-              name="emai"
+              name="email"
               control={methods.control}
               render={({ field }) => (
                 <Input {...field} placeholder="Email" type="text" />

@@ -29,8 +29,12 @@ const RegistrationButton = ({ handleClick }) => {
         setShowRegisterForm(false);
         handleClick && handleClick();
       })
-      .catch(() => {
-        errNotify(ERR_REGISTRATION);
+      .catch((error) => {
+        if (error.includes("409")) {
+          errNotify("The user is already registered");
+        } else {
+          errNotify(ERR_REGISTRATION);
+        }
       });
   };
 
