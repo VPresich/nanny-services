@@ -32,13 +32,14 @@ export const getNannyById = createAsyncThunk(
 
 export const getNanniesWithParams = createAsyncThunk(
   "nannies/withParams",
-  async ({ page, limit, query }, thunkAPI) => {
+  async ({ page, limit, query, sort }, thunkAPI) => {
     try {
       const response = await axiosInst.get(`nannies`, {
         params: {
           page,
           limit,
-          ...query,
+          query,
+          sort,
         },
       });
       return response.data;

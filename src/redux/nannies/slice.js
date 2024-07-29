@@ -13,7 +13,7 @@ const nanniesSlice = createSlice({
     error: null,
     favorites: [],
     currentPage: 1,
-    totalItems: 20,
+    totalItems: 30,
     totalPages: 1,
     itemsPerPage: 3,
   },
@@ -27,9 +27,9 @@ const nanniesSlice = createSlice({
       state.items = [];
       state.isLoading = false;
       state.error = null;
-      state.totalItems = 20;
+      state.totalItems = 30;
       state.totalPages = 1;
-      state.itemsPerPage = 4;
+      state.itemsPerPage = 3;
     },
   },
 

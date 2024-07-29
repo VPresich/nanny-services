@@ -1,12 +1,19 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import clsx from "clsx";
-import { getNanniesPerPage } from "../../redux/nannies/operations";
+import {
+  // getNanniesPerPage,
+  getNanniesWithParams,
+} from "../../redux/nannies/operations";
 import { fetchFavorites } from "../../redux/favorites/operations";
 import { selectIsLoggedIn, selectTheme } from "../../redux/auth/selectors";
 import { setPage } from "../../redux/nannies/slice";
 import CardList from "../../components/CardsList/CardsList";
 import Filters from "../../components/Filters/Filters";
+import {
+  selectSortParam,
+  selectQueryParams,
+} from "../../redux/filters/selectors";
 import {
   selectNannies,
   selectCurrentPage,
@@ -35,18 +42,20 @@ export default function NanniesPage() {
 
   const theme = useSelector(selectTheme);
 
-  //  const queryParams = useSelector(selectQueryParams);
+  const queryParams = useSelector(selectQueryParams);
+  const sortParam = useSelector(selectSortParam);
 
   useEffect(() => {
     dispatch(
-      getNanniesPerPage({
+      getNanniesWithParams({
         page: currentPage,
         limit: itemsPerPage,
-        //  query: queryParams,
+        query: queryParams,
+        sort: sortParam,
       })
     );
     isLoggedIn && dispatch(fetchFavorites());
-  }, [dispatch, currentPage, itemsPerPage, isLoggedIn]);
+  }, [dispatch, currentPage, itemsPerPage, isLoggedIn, queryParams, sortParam]);
 
   const handleLoadMore = () => {
     dispatch(setPage(currentPage + 1));

@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { saveFilter } from "../../redux/filters/slice";
 import { selectTheme } from "../../redux/auth/selectors";
 import { selectFilter } from "../../redux/filters/selectors";
+import { resetNanniesState } from "../../redux/nannies/slice";
 
 import DropDownSelector from "../UI/DropDownSelector/DropDownSelector";
 import css from "./Filters.module.css";
@@ -24,6 +25,7 @@ const Filters = () => {
 
   const handleFilterChange = (filter) => {
     dispatch(saveFilter(filter));
+    dispatch(resetNanniesState());
   };
 
   return (
