@@ -4,10 +4,9 @@ import clsx from "clsx";
 import { getNanniesPerPage } from "../../redux/nannies/operations";
 import { fetchFavorites } from "../../redux/favorites/operations";
 import { selectIsLoggedIn, selectTheme } from "../../redux/auth/selectors";
-import { selectQueryParams } from "../../redux/filters/selectors";
 import { setPage } from "../../redux/nannies/slice";
 import CardList from "../../components/CardsList/CardsList";
-// import Filters from "../../components/Filters/Filters";
+import Filters from "../../components/Filters/Filters";
 import {
   selectNannies,
   selectCurrentPage,
@@ -57,7 +56,7 @@ export default function NanniesPage() {
       <DocumentTitle>Nannies catalog</DocumentTitle>
       <section className={css.container}>
         <h2 className="visually-hidden"> Nannies catalog</h2>
-        <div className={css.headerLine}></div>
+        <Filters />
         <div className={css.catalog}>
           {isLoading ? (
             <p>Loading...</p>
