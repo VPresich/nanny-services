@@ -28,7 +28,7 @@ export default function LoginForm({ handleLogin }) {
             <h3 className={css.title}>Log In</h3>
             <p className={css.text}>
               Welcome back! Please enter your credentials to access your account
-              and continue your search for an teacher.
+              and continue your babysitter search.
             </p>
           </div>
           <div className={css.inputsWrapper}>

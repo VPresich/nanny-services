@@ -19,7 +19,7 @@ export const getNanniesPerPage = createAsyncThunk(
 );
 
 export const getNannyById = createAsyncThunk(
-  "nannies/teacherById",
+  "nannies/nannyById",
   async (id, thunkAPI) => {
     try {
       const response = await axiosInst.get(`nannies/${id}`);

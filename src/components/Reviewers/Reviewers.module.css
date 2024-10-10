@@ -5,8 +5,7 @@
   margin-bottom: 32px;
 }
 
-.reviewer {
-  width: 417px;
+.elem {
   display: flex;
   flex-direction: column;
   row-gap: 16px;
@@ -56,25 +55,30 @@
   background: var(--section-bgr);
   color: var(--default);
 }
+
 .letter.yellow {
   color: var(--yellow);
-  background: var(--yellow-accent);
+  background: var(--light-yellow);
 }
+
 .letter.green {
   color: var(--green);
-  background: var(--green-accent);
+  background: var(--light-green);
 }
+
 .letter.blue {
   color: var(--blue);
-  background: var(--blue-accent);
+  background: var(--light-blue);
 }
+
 .letter.pink {
   color: var(--pink);
-  background: var(--pink-accent);
+  background: var(--light-pink);
 }
+
 .letter.red {
   color: var(--red);
-  background: var(--red-accent);
+  background: var(--light-red);
 }
 
 .name {

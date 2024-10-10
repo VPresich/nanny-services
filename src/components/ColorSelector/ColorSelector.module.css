@@ -15,6 +15,7 @@
   border-radius: 50px;
   height: 32px;
   width: 32px;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn.green {
@@ -35,6 +36,26 @@
 
 .btn.pink {
   background-color: var(--pink);
+}
+
+.btn.green:hover {
+  background-color: var(--green-accent);
+}
+
+.btn.blue:hover {
+  background-color: var(--blue-accent);
+}
+
+.btn.red:hover {
+  background-color: var(--red-accent);
+}
+
+.btn.yellow:hover {
+  background-color: var(--yellow-accent);
+}
+
+.btn.pink:hover {
+  background-color: var(--pink-accent);
 }
 
 .btn.open .icon {
@@ -79,6 +100,26 @@
 
 .label.pink {
   background-color: var(--pink);
+}
+
+.label.green:hover {
+  background-color: var(--green-accent);
+}
+
+.label.blue:hover {
+  background-color: var(--blue-accent);
+}
+
+.label.red:hover {
+  background-color: var(--red-accent);
+}
+
+.label.yellow:hover {
+  background-color: var(--yellow-accent);
+}
+
+.label.pink:hover {
+  background-color: var(--pink-accent);
 }
 
 .label input {
