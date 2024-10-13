@@ -14,7 +14,7 @@ import css from "./AppBar.module.css";
 
 export default function AppBar() {
   const theme = useSelector(selectTheme);
-  const location = useLocation();
+  const isHomePage = useLocation().pathname === "/";
 
   const headerRef = useRef(null);
 
@@ -30,20 +30,18 @@ export default function AppBar() {
   };
 
   useEffect(() => {
+    if (isHomePage) return;
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isHomePage]);
 
   return (
     <React.Fragment>
       <header
         ref={headerRef}
-        className={clsx(
-          css.header,
-          location.pathname === "/" ? css.headerHome : css[theme]
-        )}
+        className={clsx(css.header, isHomePage ? css.headerHome : css[theme])}
       >
         <Logo />
         <AppNav />
